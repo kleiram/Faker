@@ -11,7 +11,29 @@ with more Swift specific code (not a direct port).
 
 ### CocoaPods
 
-_Coming soon!_
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate Faker into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+pod 'Faker'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 ## Usage
 
