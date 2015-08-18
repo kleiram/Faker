@@ -1,4 +1,4 @@
-// nl_NL.Internet.swift
+// nl_NL.Company.swift
 //
 // Copyright (c) 2014–2015 Apostle (http://apostle.nl)
 //
@@ -23,14 +23,18 @@
 import Foundation
 
 public extension nl_NL {
-    public class Internet {
-        public class Provider : Faker.Internet.Provider {
-            override public func tlds() -> [String] {
-                return [ "com", "com", "com", "net", "org", "nl", "nl", "nl" ]
+    public class Company {
+        public class Provider : Faker.Company.Provider {
+            override public func formats() -> [String] {
+                return [
+                    "\(Faker.Person.lastName()) \(Faker.Company.companySuffix())",
+                    "\(Faker.Person.lastName()) \(Faker.Person.lastName()) \(Faker.Company.companySuffix())",
+                    "\(Faker.Person.lastName())",
+                ]
             }
             
-            override public func freeEmailDomains() -> [String] {
-                return [ "gmail.com", "hotmail.nl", "live.nl", "yahoo.nl" ]
+            override public func suffixes() -> [String] {
+                return [ "VOF", "CV", "LLP", "BV", "NV", "IBC", "CSL", "EESV", "SE", "CV", "Stichting", "& Zonen", "& Zn" ]
             }
         }
     }
