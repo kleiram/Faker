@@ -150,7 +150,9 @@ public class Internet {
         - returns: Returns a random username.
     */
     public class func username() -> String {
-        return dataProvider().usernameFormats().random()!.numerify().lexify()
+        let result = dataProvider().usernameFormats().random()!
+
+        return result.numerify().lexify().lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: ".")
     }
     
     /**
@@ -184,7 +186,7 @@ public class Internet {
         - returns: Returns a random domain word.
     */
     public class func domainWord() -> String {
-        return "\(Person.lastName())".lowercaseString
+        return "\(Person.lastName())".lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "-")
     }
     
     /**
