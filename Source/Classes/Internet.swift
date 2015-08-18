@@ -26,6 +26,10 @@ public class Internet {
     // MARK: Provider
     
     public class Provider {
+        public init() {
+            // noop
+        }
+        
         func urlFormats() -> [String] {
             return [
                 "http://\(Internet.domainName())",
