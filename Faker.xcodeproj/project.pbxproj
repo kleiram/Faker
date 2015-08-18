@@ -23,6 +23,7 @@
 		F670D84E1B83595700439D7D /* nl_NL.Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F670D84D1B83595700439D7D /* nl_NL.Person.swift */; };
 		F670D8501B835ADE00439D7D /* nl_NL.Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F670D84F1B835ADE00439D7D /* nl_NL.Internet.swift */; };
 		F670D8521B835C0A00439D7D /* nl_NL.Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = F670D8511B835C0A00439D7D /* nl_NL.Company.swift */; };
+		F670D8581B835E0800439D7D /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F670D8571B835E0800439D7D /* NSDate.swift */; };
 		F6AFAA961B8284250025C9D0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFAA951B8284250025C9D0 /* Array.swift */; };
 		F6AFAA981B82855C0025C9D0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFAA971B82855C0025C9D0 /* Int.swift */; };
 		F6AFAA9A1B8286290025C9D0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFAA991B8286290025C9D0 /* Double.swift */; };
@@ -57,6 +58,7 @@
 		F670D84D1B83595700439D7D /* nl_NL.Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nl_NL.Person.swift; sourceTree = "<group>"; };
 		F670D84F1B835ADE00439D7D /* nl_NL.Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nl_NL.Internet.swift; sourceTree = "<group>"; };
 		F670D8511B835C0A00439D7D /* nl_NL.Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nl_NL.Company.swift; sourceTree = "<group>"; };
+		F670D8571B835E0800439D7D /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		F6AFAA951B8284250025C9D0 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		F6AFAA971B82855C0025C9D0 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		F6AFAA991B8286290025C9D0 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F670D8271B83061C00439D7D /* String.swift */,
 				F6AFAA951B8284250025C9D0 /* Array.swift */,
 				F670D8251B8289B500439D7D /* Character.swift */,
+				F670D8571B835E0800439D7D /* NSDate.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				F670D8261B8289B500439D7D /* Character.swift in Sources */,
 				F670D8471B83570B00439D7D /* Company.swift in Sources */,
 				F670D8501B835ADE00439D7D /* nl_NL.Internet.swift in Sources */,
+				F670D8581B835E0800439D7D /* NSDate.swift in Sources */,
 				F670D8411B8344E600439D7D /* Internet.swift in Sources */,
 				F670D8521B835C0A00439D7D /* nl_NL.Company.swift in Sources */,
 				F670D84E1B83595700439D7D /* nl_NL.Person.swift in Sources */,
