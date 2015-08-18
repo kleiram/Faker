@@ -33,8 +33,13 @@ public extension Int {
     
         - returns: Returns a random value between `min` and `max`.
     */
-    public static func random(min : Int = 0, max : Int = Int(UInt32.max - 1)) -> Int {
-        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    public static func random(min : Int = 0, max : Int = Int.max) -> Int {
+        precondition(min <= max, "attempt to call random() with min > max")
+        
+        let diff   = UInt(bitPattern: max &- min)
+        let result = UInt.random(0, max: diff)
+        
+        return min + Int(bitPattern: result)
     }
     
     /**
@@ -57,5 +62,30 @@ public extension Int {
         let randomized = Double(self) * multiplier
         
         return Int(randomized) + 1
+    }
+}
+
+private extension UInt {
+    static func random(min : UInt, max : UInt) -> UInt {
+        precondition(min <= max, "attempt to call random() with min > max")
+        
+        if min == UInt.min && max == UInt.max {
+            var result : UInt = 0
+            arc4random_buf(&result, sizeofValue(result))
+            
+            return result
+        } else {
+            let range         = max - min + 1
+            let limit         = UInt.max - UInt.max % range
+            var result : UInt = 0
+            
+            repeat {
+                arc4random_buf(&result, sizeofValue(result))
+            } while result >= limit
+            
+            result = result % range
+            
+            return min + result
+        }
     }
 }
