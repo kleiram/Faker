@@ -140,8 +140,8 @@ public class Person {
     */
     public class func title(gender : Gender? = nil) -> String {
         switch gender ?? Gender.sample() {
-        case Male: return maleTitle()
-        case Female: return femaleTitle()
+        case .Male: return maleTitle()
+        case .Female: return femaleTitle()
         }
     }
     
