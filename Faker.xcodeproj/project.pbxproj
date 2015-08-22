@@ -30,6 +30,10 @@
 		F6AFAA9A1B8286290025C9D0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFAA991B8286290025C9D0 /* Double.swift */; };
 		F6C07BD61B820BD2004E8BDD /* Faker.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C07BD51B820BD2004E8BDD /* Faker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6C07BDC1B820BD2004E8BDD /* Faker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C07BD01B820BD2004E8BDD /* Faker.framework */; };
+		F6D36FD91B889EEE00326A75 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F6D36FD51B889EEE00326A75 /* README.md */; };
+		F6D36FDA1B889EEE00326A75 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = F6D36FD61B889EEE00326A75 /* CHANGELOG.md */; };
+		F6D36FDB1B889EEE00326A75 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F6D36FD71B889EEE00326A75 /* LICENSE */; };
+		F6D36FDC1B889EEE00326A75 /* Faker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F6D36FD81B889EEE00326A75 /* Faker.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		F6C07BD51B820BD2004E8BDD /* Faker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Faker.h; sourceTree = "<group>"; };
 		F6C07BDB1B820BD2004E8BDD /* FakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C07BE11B820BD2004E8BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D36FD51B889EEE00326A75 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F6D36FD61B889EEE00326A75 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		F6D36FD71B889EEE00326A75 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F6D36FD81B889EEE00326A75 /* Faker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Faker.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +177,10 @@
 				F6C07BD21B820BD2004E8BDD /* Source */,
 				F6C07BDF1B820BD2004E8BDD /* Tests */,
 				F6C07BD11B820BD2004E8BDD /* Products */,
+				F6D36FD51B889EEE00326A75 /* README.md */,
+				F6D36FD61B889EEE00326A75 /* CHANGELOG.md */,
+				F6D36FD71B889EEE00326A75 /* LICENSE */,
+				F6D36FD81B889EEE00326A75 /* Faker.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,6 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D36FDC1B889EEE00326A75 /* Faker.podspec in Resources */,
+				F6D36FDB1B889EEE00326A75 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +360,8 @@
 				F670D8521B835C0A00439D7D /* nl_NL.Company.swift in Sources */,
 				F670D84E1B83595700439D7D /* nl_NL.Person.swift in Sources */,
 				F670D8491B83582100439D7D /* en_US.Company.swift in Sources */,
+				F6D36FD91B889EEE00326A75 /* README.md in Sources */,
+				F6D36FDA1B889EEE00326A75 /* CHANGELOG.md in Sources */,
 				F670D8331B8322F700439D7D /* Uuid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
