@@ -27,6 +27,10 @@ public class Person {
     public enum Gender {
         case Male
         case Female
+        
+        static func sample() -> Gender {
+            return [Gender.Male,Gender.Female].random()!
+        }
     }
     
     // MARK: Provider
@@ -97,13 +101,10 @@ public class Person {
         - returns: Returns a random name for a person of the given gender.
     */
     public class func name(gender : Gender? = nil) -> String {
-        if gender != nil && gender == .Male {
-            return dataProvider().maleNameFormats().random()!
-        } else if gender != nil && gender == .Female {
-            return dataProvider().femaleNameFormats().random()!
+        switch gender ?? Gender.sample() {
+        case .Male: return dataProvider().maleNameFormats().random()!
+        case .Female: return dataProvider().femaleNameFormats().random()!
         }
-        
-        return [ name(.Male), name(.Female) ].random()!
     }
     
     /**
@@ -115,13 +116,10 @@ public class Person {
         - returns: Returns a random first name for a person of the given gender.
     */
     public class func firstName(gender : Gender? = nil) -> String {
-        if gender != nil && gender == .Male {
-            return maleFirstName()
-        } else if gender != nil && gender == .Female {
-            return femaleFirstName()
+        switch gender ?? Gender.sample() {
+        case .Male: return maleFirstName()
+        case .Female: return femaleFirstName()
         }
-        
-        return [ maleFirstName(), femaleFirstName() ].random()!
     }
     
     /**
@@ -141,13 +139,10 @@ public class Person {
         - returns: Returns a random title for a person of the given gender.
     */
     public class func title(gender : Gender? = nil) -> String {
-        if gender != nil && gender == .Male {
-            return maleTitle()
-        } else if gender != nil && gender == .Female {
-            return femaleTitle()
+        switch gender ?? Gender.sample() {
+        case .Male: return maleTitle()
+        case .Female: return femaleTitle()
         }
-        
-        return [ maleTitle(), femaleTitle() ].random()!
     }
     
     /**
