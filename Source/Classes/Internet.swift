@@ -166,7 +166,7 @@ public class Internet {
                    `maxLength` characters.
     */
     public class func password(minLength : Int = 6, maxLength : Int = 20) -> String {
-        let format = "".join(Array(count: Int.random(minLength, max: maxLength), repeatedValue: "*"))
+        let format = Array(count: Int.random(minLength, max: maxLength), repeatedValue: "*").joinWithSeparator("")
         
         return format.lexify()
     }
@@ -221,7 +221,7 @@ public class Internet {
             return ""
         }
         
-        return "-".join(Lorem.words(variable ? nbWords.randomize(40) : nbWords)).lowercaseString
+        return Lorem.words(variable ? nbWords.randomize(40) : nbWords).joinWithSeparator("-").lowercaseString
     }
     
     /**
@@ -230,12 +230,12 @@ public class Internet {
         - returns: Returns a random IPv4 address.
     */
     public class func ipv4() -> String {
-        return ".".join([
+        return [
             Int.random(0, max: 255),
             Int.random(0, max: 255),
             Int.random(0, max: 255),
             Int.random(0, max: 255)
-        ].map(String.init))
+        ].map(String.init).joinWithSeparator(".")
     }
     
     /**
@@ -246,7 +246,7 @@ public class Internet {
     public class func ipv6() -> String {
         let components = (0..<8).map { _ in Int.random(0, max: 65535) }
         
-        return ":".join(components.map({ String(format: "%04x", arguments: [ $0 ]) }))
+        return components.map({ String(format: "%04x", arguments: [ $0 ]) }).joinWithSeparator(":")
     }
     
     /**
@@ -266,7 +266,7 @@ public class Internet {
             components = (0..<2).map({ _ in Int.random(0, max: 255) }).map(String.init)
         }
         
-        return prefix + ".".join(components)
+        return prefix + components.joinWithSeparator(".")
     }
     
     /**
@@ -277,7 +277,7 @@ public class Internet {
     public class func mac() -> String {
         let components = (0..<6).map { _ in Int.random(0, max: 255) }
         
-        return ":".join(components.map({ String(format: "%02X", arguments: [ $0 ]) }))
+        return components.map({ String(format: "%02X", arguments: [ $0 ]) }).joinWithSeparator(":")
     }
     
     private class func dataProvider() -> Provider {

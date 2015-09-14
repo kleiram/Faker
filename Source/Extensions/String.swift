@@ -45,13 +45,13 @@ public extension String {
                    with numbers between `[0,9]` and `[1,9]` respectively.
      */
     public func numerify() -> String {
-        return "".join(characters.map {
+        return characters.map {
             switch $0 {
             case "#": return String(Int.random(0, max: 9))
             case "%": return String(Int.random(1, max: 9))
             default:  return String($0)
             }
-        })
+        }.joinWithSeparator("")
     }
     
     /**
@@ -65,13 +65,13 @@ public extension String {
                    character respectively.
     */
     public func lexify() -> String {
-        return "".join(characters.map {
+        return characters.map {
             switch $0 {
             case "?": return String(Character.randomLetter())
             case "*": return String(Character.randomAscii())
             default:  return String($0)
             }
-        })
+        }.joinWithSeparator("")
     }
     
     /**
