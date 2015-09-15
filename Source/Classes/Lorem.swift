@@ -91,7 +91,7 @@ public class Lorem {
         - returns: Returns a string of `count` words.
     */
     public class func words(count : Int = 3) -> String {
-        return " ".join(words(count))
+        return words(count).joinWithSeparator(" ")
     }
     
     /**
@@ -132,7 +132,7 @@ public class Lorem {
         - returns: Returns a string of random sentences.
     */
     public class func sentences(nbSentences : Int = 3) -> String {
-        return " ".join(sentences(nbSentences))
+        return sentences(nbSentences).joinWithSeparator(" ")
     }
     
     /**
@@ -150,7 +150,7 @@ public class Lorem {
             return ""
         }
         
-        return " ".join(sentences(variable ? nbSentences.randomize(40) : nbSentences))
+        return sentences(variable ? nbSentences.randomize(40) : nbSentences).joinWithSeparator(" ")
     }
     
     /**
@@ -172,7 +172,7 @@ public class Lorem {
         - returns: Returns a string of random paragraphs.
     */
     public class func paragraphs(nbParagraphs : Int = 3) -> String {
-        return "\n\n".join(paragraphs(nbParagraphs))
+        return paragraphs(nbParagraphs).joinWithSeparator("\n\n")
     }
     
     /**
@@ -226,7 +226,7 @@ public class Lorem {
             }
         }
         
-        return "".join(result)
+        return result.joinWithSeparator("")
     }
 }
 

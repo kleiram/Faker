@@ -5,7 +5,7 @@ with more Swift specific code (not a direct port).
 
 ## Requirements
 
- - iOS 9.0+
+ - iOS 8.0+
 
 ## Installation
 
@@ -23,7 +23,7 @@ To integrate Faker into your Xcode project using CocoaPods, specify it in your `
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '8.0'
 use_frameworks!
 
 pod 'Faker'
