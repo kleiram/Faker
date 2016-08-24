@@ -30,10 +30,6 @@
 		F6AFAA9A1B8286290025C9D0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AFAA991B8286290025C9D0 /* Double.swift */; };
 		F6C07BD61B820BD2004E8BDD /* Faker.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C07BD51B820BD2004E8BDD /* Faker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6C07BDC1B820BD2004E8BDD /* Faker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C07BD01B820BD2004E8BDD /* Faker.framework */; };
-		F6D36FD91B889EEE00326A75 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F6D36FD51B889EEE00326A75 /* README.md */; };
-		F6D36FDA1B889EEE00326A75 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = F6D36FD61B889EEE00326A75 /* CHANGELOG.md */; };
-		F6D36FDB1B889EEE00326A75 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F6D36FD71B889EEE00326A75 /* LICENSE */; };
-		F6D36FDC1B889EEE00326A75 /* Faker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F6D36FD81B889EEE00326A75 /* Faker.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,8 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D36FDC1B889EEE00326A75 /* Faker.podspec in Resources */,
-				F6D36FDB1B889EEE00326A75 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +354,6 @@
 				F670D8521B835C0A00439D7D /* nl_NL.Company.swift in Sources */,
 				F670D84E1B83595700439D7D /* nl_NL.Person.swift in Sources */,
 				F670D8491B83582100439D7D /* en_US.Company.swift in Sources */,
-				F6D36FD91B889EEE00326A75 /* README.md in Sources */,
-				F6D36FDA1B889EEE00326A75 /* CHANGELOG.md in Sources */,
 				F670D8331B8322F700439D7D /* Uuid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,10 +506,7 @@
 		F6C07BEA1B820BD2004E8BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -532,10 +521,7 @@
 		F6C07BEB1B820BD2004E8BDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.apostle.$(PRODUCT_NAME:rfc1034identifier)";
