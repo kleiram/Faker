@@ -1,5 +1,7 @@
 # Faker
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 This is a Swift port of the awesome PHP [Faker library](https://github.com/fzaninotto/Faker)
 with more Swift specific code (not a direct port).
 
