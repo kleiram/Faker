@@ -22,10 +22,10 @@
 
 import Foundation
 
-public class Internet {
+open class Internet {
     // MARK: Provider
     
-    public class Provider {
+    open class Provider {
         public init() {
             // noop
         }
@@ -77,7 +77,7 @@ public class Internet {
     
     // MARK: Variables
     
-    public static var provider : Provider?
+    open static var provider : Provider?
     
     // MARK: Generators
     
@@ -89,7 +89,7 @@ public class Internet {
 
         - returns: Returns a random e-mail address.
     */
-    public class func email() -> String {
+    open class func email() -> String {
         return dataProvider().emailFormats().random()!
     }
     
@@ -98,7 +98,7 @@ public class Internet {
 
         - returns: Returns a random safe e-mail address.
     */
-    public class func safeEmail() -> String {
+    open class func safeEmail() -> String {
         return "\(username())@\(safeEmailDomain())"
     }
     
@@ -110,7 +110,7 @@ public class Internet {
     
         - returns: Returns a random free e-mail address.
     */
-    public class func freeEmail() -> String {
+    open class func freeEmail() -> String {
         return "\(username())@\(freeEmailDomain())"
     }
     
@@ -122,7 +122,7 @@ public class Internet {
 
         - returns: Returns a random company e-mail address.
     */
-    public class func companyEmail() -> String {
+    open class func companyEmail() -> String {
         return "\(username())@\(domainName())"
     }
     
@@ -131,7 +131,7 @@ public class Internet {
 
         - returns: Returns a random free e-mail domain.
     */
-    public class func freeEmailDomain() -> String {
+    open class func freeEmailDomain() -> String {
         return dataProvider().freeEmailDomains().random()!
     }
     
@@ -140,7 +140,7 @@ public class Internet {
 
         - returns: Returns a random safe e-mail domain.
     */
-    public class func safeEmailDomain() -> String {
+    open class func safeEmailDomain() -> String {
         return [ "example.com", "example.org", "example.net" ].random()!
     }
     
@@ -149,10 +149,10 @@ public class Internet {
 
         - returns: Returns a random username.
     */
-    public class func username() -> String {
+    open class func username() -> String {
         let result = dataProvider().usernameFormats().random()!
 
-        return result.numerify().lexify().lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: ".")
+        return result.numerify().lexify().lowercased().replacingOccurrences(of: " ", with: ".")
     }
     
     /**
@@ -165,8 +165,8 @@ public class Internet {
         - returns: Returns a password of at least `minLength` and at most
                    `maxLength` characters.
     */
-    public class func password(minLength : Int = 6, maxLength : Int = 20) -> String {
-        let format = Array(count: Int.random(minLength, max: maxLength), repeatedValue: "*").joinWithSeparator("")
+    open class func password(minLength : Int = 6, maxLength : Int = 20) -> String {
+        let format = Array(repeating: "*", count: Int.random(min: minLength, max: maxLength)).joined(separator: "")
         
         return format.lexify()
     }
@@ -176,7 +176,7 @@ public class Internet {
 
         - returns: Returns a random domain name.
     */
-    public class func domainName() -> String {
+    open class func domainName() -> String {
         return "\(domainWord()).\(tld())"
     }
     
@@ -185,8 +185,8 @@ public class Internet {
 
         - returns: Returns a random domain word.
     */
-    public class func domainWord() -> String {
-        return "\(Person.lastName())".lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "-")
+    open class func domainWord() -> String {
+        return "\(Person.lastName())".lowercased().replacingOccurrences(of: " ", with: "-")
     }
     
     /**
@@ -194,7 +194,7 @@ public class Internet {
 
         - returns: Returns a random TLD.
     */
-    public class func tld() -> String {
+    open class func tld() -> String {
         return dataProvider().tlds().random()!
     }
     
@@ -203,7 +203,7 @@ public class Internet {
 
         - returns: Returns a random URL.
     */
-    public class func url() -> String {
+    open class func url() -> String {
         return dataProvider().urlFormats().random()!
     }
     
@@ -216,12 +216,12 @@ public class Internet {
 
         - returns: Returns a random slug of `nbWords` words.
     */
-    public class func slug(nbWords : Int = 6, variable : Bool = true) -> String {
+    open class func slug(_ nbWords : Int = 6, variable : Bool = true) -> String {
         if nbWords <= 0 {
             return ""
         }
         
-        return Lorem.words(variable ? nbWords.randomize(40) : nbWords).joinWithSeparator("-").lowercaseString
+        return Lorem.words(variable ? nbWords.randomize(40) : nbWords).joined(separator: "-").lowercased()
     }
     
     /**
@@ -229,13 +229,13 @@ public class Internet {
 
         - returns: Returns a random IPv4 address.
     */
-    public class func ipv4() -> String {
+    open class func ipv4() -> String {
         return [
-            Int.random(0, max: 255),
-            Int.random(0, max: 255),
-            Int.random(0, max: 255),
-            Int.random(0, max: 255)
-        ].map(String.init).joinWithSeparator(".")
+            Int.random(min: 0, max: 255),
+            Int.random(min: 0, max: 255),
+            Int.random(min: 0, max: 255),
+            Int.random(min: 0, max: 255)
+        ].map(String.init).joined(separator: ".")
     }
     
     /**
@@ -243,10 +243,10 @@ public class Internet {
 
         - returns: Returns a random IPv6 address.
     */
-    public class func ipv6() -> String {
-        let components = (0..<8).map { _ in Int.random(0, max: 65535) }
+    open class func ipv6() -> String {
+        let components = (0..<8).map { _ in Int.random(min: 0, max: 65535) }
         
-        return components.map({ String(format: "%04x", arguments: [ $0 ]) }).joinWithSeparator(":")
+        return components.map({ String(format: "%04x", arguments: [ $0 ]) }).joined(separator: ":")
     }
     
     /**
@@ -254,19 +254,19 @@ public class Internet {
 
         - returns: Returns a random local IPv4 address.
     */
-    public class func localIpv4() -> String {
+    open class func localIpv4() -> String {
         var prefix : String = ""
         var components : [String] = [String]()
         
-        if Int.random(0, max: 1) == 0 {
+        if Int.random(min: 0, max: 1) == 0 {
             prefix     = "10."
-            components = (0..<3).map({ _ in Int.random(0, max: 255) }).map(String.init)
+            components = (0..<3).map({ _ in Int.random(min: 0, max: 255) }).map(String.init)
         } else {
             prefix     = "192.168."
-            components = (0..<2).map({ _ in Int.random(0, max: 255) }).map(String.init)
+            components = (0..<2).map({ _ in Int.random(min: 0, max: 255) }).map(String.init)
         }
         
-        return prefix + components.joinWithSeparator(".")
+        return prefix + components.joined(separator: ".")
     }
     
     /**
@@ -274,13 +274,13 @@ public class Internet {
 
         - returns: Returns a random MAC address.
     */
-    public class func mac() -> String {
-        let components = (0..<6).map { _ in Int.random(0, max: 255) }
+    open class func mac() -> String {
+        let components = (0..<6).map { _ in Int.random(min: 0, max: 255) }
         
-        return components.map({ String(format: "%02X", arguments: [ $0 ]) }).joinWithSeparator(":")
+        return components.map({ String(format: "%02X", arguments: [ $0 ]) }).joined(separator: ":")
     }
     
-    private class func dataProvider() -> Provider {
+    fileprivate class func dataProvider() -> Provider {
         return provider ?? Provider()
     }
 }

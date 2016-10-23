@@ -32,8 +32,8 @@ public extension Double {
 
         - returns: Returns a random double with `decimals` decimals between `min` and `max`.
     */
-    public static func random(decimals : Int? = nil, min : Double = 0, max : Double? = nil) -> Double {
-        let digits  = decimals != nil ? decimals! : Int.random(1, max: 9)
+    public static func random(_ decimals : Int? = nil, min : Double = 0, max : Double? = nil) -> Double {
+        let digits  = decimals != nil ? decimals! : Int.random(min: 1, max: 9)
         var maximum = max != nil ? max! : Double(Int.number())
         var minimum = min
         
@@ -55,9 +55,9 @@ public extension Double {
         
         - returns: Returns the value rounded to the given number of decimals.
     */
-    public func decimals(decimals : Int) -> Double {
+    public func decimals(_ decimals : Int) -> Double {
         let multiplier = pow(10, Double(decimals))
-        
-        return round(self * multiplier) / multiplier
+
+        return (self * multiplier).rounded() / multiplier
     }
 }

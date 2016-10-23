@@ -22,10 +22,10 @@
 
 import Foundation
 
-public extension en_US {
-    public class Company {
-        public class Provider : Faker.Company.Provider {
-            override public func formats() -> [String] {
+extension en_US {
+    open class Company {
+        open class Provider : Faker.Company.Provider {
+            override open func formats() -> [String] {
                 return [
                     "\(Faker.Person.lastName()) \(Faker.Company.companySuffix())",
                     "\(Faker.Person.lastName())-\(Faker.Person.lastName())",
@@ -33,7 +33,7 @@ public extension en_US {
                 ]
             }
             
-            override public func suffixes() -> [String] {
+            override open func suffixes() -> [String] {
                 return [ "Inc", "and Sons", "LLC", "Group", "PLC", "Ltd" ]
             }
         }

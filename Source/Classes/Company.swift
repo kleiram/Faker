@@ -22,10 +22,10 @@
 
 import Foundation
 
-public class Company {
+open class Company {
     // MARK: Provider
     
-    public class Provider {
+    open class Provider {
         public init() {
             // noop
         }
@@ -43,7 +43,7 @@ public class Company {
     
     // MARK: Variables
     
-    public static var provider : Provider?
+    open static var provider : Provider?
     
     // MARK: Generators
     
@@ -52,7 +52,7 @@ public class Company {
 
         - returns: Returns a random company name.
     */
-    public class func company() -> String {
+    open class func company() -> String {
         return dataProvider().formats().random()!
     }
     
@@ -61,11 +61,11 @@ public class Company {
 
         - returns: Returns a random company suffix.
     */
-    public class func companySuffix() -> String {
+    open class func companySuffix() -> String {
         return dataProvider().suffixes().random()!
     }
     
-    private class func dataProvider() -> Provider {
+    fileprivate class func dataProvider() -> Provider {
         return provider ?? Provider()
     }
 }

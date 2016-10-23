@@ -61,7 +61,7 @@ public extension Array {
 
         - returns: Returns a random subset of `cnt` elements from the array.
     */
-    public func random(cnt : Int = 1) -> [Element] {
+    public func random(_ cnt : Int = 1) -> [Element] {
         let result = shuffled()
         
         return (cnt > result.count) ? result : Array(result[0..<cnt])

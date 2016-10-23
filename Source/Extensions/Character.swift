@@ -29,7 +29,7 @@ public extension Character {
         - returns: Returns a random letter between `a` and `z`.
     */
     public static func randomLetter() -> Character {
-        return Character(UnicodeScalar(Int.random(97, max: 122)))
+        return Character(UnicodeScalar(Int.random(min: 97, max: 122))!)
     }
     
     /**
@@ -38,6 +38,6 @@ public extension Character {
         - returns: Returns a random ASCII character.
     */
     public static func randomAscii() -> Character {
-        return Character(UnicodeScalar(Int.random(33, max: 126)))
+        return Character(UnicodeScalar(Int.random(min: 33, max: 126))!)
     }
 }

@@ -22,13 +22,13 @@
 
 import Foundation
 
-public class Uuid {
+open class Uuid {
     /**
         Return a random UUID (version 4)
 
         - returns: Returns a random version 4 UUID.
     */
-    public class func uuid() -> String {
-        return NSUUID().UUIDString.lowercaseString
+    open class func uuid() -> String {
+        return NSUUID().uuidString.lowercased()
     }
 }

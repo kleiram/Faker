@@ -288,6 +288,7 @@
 				TargetAttributes = {
 					F6C07BCF1B820BD2004E8BDD = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					F6C07BDA1B820BD2004E8BDD = {
 						CreatedOnToolsVersion = 6.4;
@@ -482,6 +483,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -500,6 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.apostle.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
