@@ -22,7 +22,7 @@
 
 import Foundation
 
-public extension NSDate {
+public extension Date {
     /**
         Generate a random date and time between two time intervals.
 
@@ -31,7 +31,7 @@ public extension NSDate {
     
         - returns: Returns a random date and time between two time intervals.
     */
-    public static func random(min : NSTimeInterval? = nil, max : NSTimeInterval? = nil) -> NSDate {
+    public static func random(min : TimeInterval? = nil, max : TimeInterval? = nil) -> Date {
         var minimum = min != nil ? Int(min!) : Int.random()
         var maximum = max != nil ? Int(max!) : Int.random()
         
@@ -41,6 +41,6 @@ public extension NSDate {
             maximum = tmp
         }
         
-        return NSDate(timeIntervalSince1970: NSTimeInterval(Int.random(minimum, max: maximum)))
+        return Date(timeIntervalSince1970: TimeInterval(Int.random(min: minimum, max: maximum)))
     }
 }

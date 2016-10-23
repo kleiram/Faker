@@ -47,11 +47,11 @@ public extension String {
     public func numerify() -> String {
         return characters.map {
             switch $0 {
-            case "#": return String(Int.random(0, max: 9))
-            case "%": return String(Int.random(1, max: 9))
+            case "#": return String(Int.random(min: 0, max: 9))
+            case "%": return String(Int.random(min: 1, max: 9))
             default:  return String($0)
             }
-        }.joinWithSeparator("")
+        }.joined(separator: "")
     }
     
     /**
@@ -71,7 +71,7 @@ public extension String {
             case "*": return String(Character.randomAscii())
             default:  return String($0)
             }
-        }.joinWithSeparator("")
+        }.joined(separator: "")
     }
     
     /**
@@ -82,7 +82,7 @@ public extension String {
 
         - returns: Returns an array of strings.
     */
-    public func split(separator : String) -> [String] {
-        return componentsSeparatedByString(separator)
+    public func split(_ separator : String) -> [String] {
+        return components(separatedBy: separator)
     }
 }

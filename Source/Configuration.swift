@@ -22,9 +22,9 @@
 
 import Foundation
 
-public class Configuration {
-    public class func localize(locale : NSLocale? = nil) {
-        let localization = locale != nil ? locale!.localeIdentifier : NSLocale.currentLocale().localeIdentifier
+open class Configuration {
+    open class func localize(_ locale : Locale? = nil) {
+        let localization = locale != nil ? locale!.identifier : Locale.current.identifier
         
         switch localization {
         case "en_US":

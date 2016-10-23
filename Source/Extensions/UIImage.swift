@@ -62,8 +62,8 @@ public extension UIImage {
         
         url += "?\(Int.number(5))"
         
-        if let URL = NSURL(string: url) {
-            if let data = NSData(contentsOfURL: URL) {
+        if let URL = URL(string: url) {
+            if let data = try? Data(contentsOf: URL) {
                 return UIImage(data: data)
             }
         }
@@ -83,15 +83,15 @@ public extension UIImage {
         - returns: Returns a random avatar.
     */
     public static func avatar(
-        username : String? = nil,
+        _ username : String? = nil,
         size : Int = 256
     ) -> UIImage? {
         let user   = username != nil ? username! : Internet.username()
         let pixels = size > 400 ? 400 : size
         let url    = "http://api.adorable.io/avatars/\(pixels)/\(user)"
         
-        if let URL = NSURL(string: url) {
-            if let data = NSData(contentsOfURL: URL) {
+        if let URL = URL(string: url) {
+            if let data = try? Data(contentsOf: URL) {
                 return UIImage(data: data)
             }
         }

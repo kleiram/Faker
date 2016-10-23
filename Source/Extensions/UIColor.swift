@@ -30,11 +30,11 @@ public extension UIColor {
 
         - returns: Returns a random color.
     */
-    public static func random(alpha : Double = 1.0) -> UIColor {
+    public static func random(_ alpha : Double = 1.0) -> UIColor {
         let (red, green, blue) = (
-            Double(Int.random(0, max: 255)),
-            Double(Int.random(0, max: 255)),
-            Double(Int.random(0, max: 255))
+            Double(Int.random(min: 0, max: 255)),
+            Double(Int.random(min: 0, max: 255)),
+            Double(Int.random(min: 0, max: 255))
         )
         
         return UIColor(
